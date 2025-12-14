@@ -1,0 +1,187 @@
+{
+  "users": [
+    {
+      "id": "12345",
+      "login": "test",
+      "password": "Qwe12345",
+      "registerAt": "2024-01-15T10:00:00.000Z",
+      "role": 0
+    },
+    {
+      "id": "12346",
+      "login": "test2@test.com",
+      "password": "qwe123",
+      "registerAt": "2024-01-20T14:30:00.000Z",
+      "role": 1
+    },
+    {
+      "id": "5319",
+      "login": "test2",
+      "password": "Qwer1234",
+      "role": 1,
+      "createdAt": "2025-11-29T12:50:09.512Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "Серебряное кольцо с фианитом",
+      "description": "Элегантное серебряное кольцо с искусственным фианитом",
+      "price": "6500",
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=b4740247c16bcc136514fd29e4c1a7215511a69e-9147982-images-thumbs&n=13",
+      "categoryId": "1",
+      "inStock": true,
+      "createdAt": "2024-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Золотой кулон",
+      "description": "Стильный золотой кулон с цепочкой",
+      "price": 12000,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=506c9962a2abe6d44d7d2b4c90501fdf4f0a4f15-4914317-images-thumbs&n=13",
+      "categoryId": "2",
+      "inStock": true,
+      "createdAt": "2024-01-12T11:30:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Жемчужные серьги",
+      "description": "Классические серьги с жемчугом",
+      "price": 8500,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=7a388a2e74171854ae2f3c8f890c03ed21c1378b-5291270-images-thumbs&n=13",
+      "categoryId": "3",
+      "inStock": true,
+      "createdAt": "2024-01-08T16:45:00.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Мужское кольцо из белого золота",
+      "description": "Солидное мужское кольцо из белого золота",
+      "price": 15000,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=e1bd6043186aac7425fe885dfb59629d00ed0cc8-12421548-images-thumbs&n=13",
+      "categoryId": "1",
+      "inStock": true,
+      "createdAt": "2024-01-05T14:20:00.000Z"
+    },
+    {
+      "id": "8e00",
+      "title": "Кулон мощи",
+      "description": "Самый крутой кулон в средиземье",
+      "price": "25000",
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=f794660d63ab4dec61d0bf0ab1809f3ccd7bde4d-12716919-images-thumbs&n=13",
+      "categoryId": "2",
+      "inStock": true,
+      "created": "2025-11-28T09:33:26.145Z"
+    },
+    {
+      "id": "784c",
+      "title": "кольцо всевластия",
+      "description": "ну средиземье чтоб того самое",
+      "price": "10000000000",
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=0105a921386b80cbd22f6680f88bbcd7a06fdb25-8195016-images-thumbs&n=13",
+      "categoryId": "1",
+      "inStock": true,
+      "created": "2025-11-28T09:41:58.210Z"
+    },
+    {
+      "id": "3d80",
+      "title": "Кольцо хотения денег",
+      "description": "Надев кольцо хочется еще больше денег",
+      "price": "500000",
+      "imageUrl": "https://yandex-images.clstorage.net/X48nrz218/157bd3vZf/2CLx3dvgiHgwr5pD84ggwwo36_S-vISqh9SfjeZzNGjOSbKktQdONfkZ3AVi3eMbGobKKI7OiBMUiL3vkhqPe8h--YDq-ZAdQeKWHqOoLNcCQp74-s3su_O9lv3CNwUc3kG7ESjLw9xg8EH4szgLakfe03GP86ED8H21ijsz84doqn3pYwhx6CTbE6NTwHibyurnRM5R3IP_IK5hQiqxrf_YQymQly-QCNS52MvM85rrxlOFwuvFa7gc9S7Ta0NnBCZdSZscieQIkz8nW0iQs66aFyhuoegzLxRSoWqSPUUHmFv9CPvvFFBcTcw7dKPCf0oT1XpfPQPYsHkKn0cXP7Smya3_sP1kvP-fpz-gqPNemsck5jX8b9t4Vp2eUqW99zgzPYxLJwCQ-FU0C_QjSo9uF9FaaymTHNCZrgMvg390RjXZD7hBpFD7SyczEMQLXvJr8GJ9IK9fLEpdSqaltcNYu3kA_-uwPNBdnDsUV9Kn-kvpOvfR76woMW4zx1t_POploRtwGdjkq8drr5BYb5KSV9iiWXjH_xhmqXKWcW0HtO-9DBsDgBRYbVCLEIMyf_rnwcIHDXNU2A3eR9P_Q9QuJTXXQPkAgF9naydEEHsKmlfsAoWwE5s4xtnCEskNtxgvfUQLS3y4EOmAA9iTCpvGm93io1HvhKilKvN_H4to9jU9d4AFiLCPv-ubUIhbllJzgErhGFcr5MLJwmLJPSesz2lc5xPc-MRhlP-IG-bX_o_V0g-9N7yU5e7Tn2fP0O6V6QeAQUwUm8cnJxjQY5puT_B-WXCTz5CaZfqWZTW3sCu5xEt_mLSABbiDNFO-owJzpTZXwYtoROFC81N_i0hioYGbMO0AjOs_u6-IVN_S8rMktr0A5xt8wnHi5llhS8i7VUQXA3CMjG0Y7zzzvt9qd-kmL-VPyCT1evMj-_8Y0kXZS_h1WNir_7vzVMj3NuJ7hAZpZN-fkCIxeuIw",
+      "categoryId": "1",
+      "inStock": true,
+      "created": "2025-12-04T12:30:03.445Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Кольца"
+    },
+    {
+      "id": "2",
+      "name": "Кулоны"
+    },
+    {
+      "id": "3",
+      "name": "Серьги"
+    },
+    {
+      "id": "4",
+      "name": "Браслеты"
+    }
+  ],
+  "orders": [],
+  "carts": [
+    {
+      "items": [
+        {
+          "productId": "1",
+          "product": {
+            "id": "1",
+            "title": "Серебряное кольцо с фианитом",
+            "description": "Элегантное серебряное кольцо с искусственным фианитом",
+            "price": "6500",
+            "imageUrl": "https://avatars.mds.yandex.net/i?id=b4740247c16bcc136514fd29e4c1a7215511a69e-9147982-images-thumbs&n=13",
+            "categoryId": "1",
+            "inStock": true,
+            "createdAt": "2024-01-10T09:00:00.000Z"
+          },
+          "quantity": 1,
+          "price": "6500",
+          "totalPrice": 6500,
+          "addedAt": "2025-12-07T07:03:55.058Z"
+        },
+        {
+          "productId": "2",
+          "product": {
+            "id": "2",
+            "title": "Золотой кулон",
+            "description": "Стильный золотой кулон с цепочкой",
+            "price": 12000,
+            "imageUrl": "https://avatars.mds.yandex.net/i?id=506c9962a2abe6d44d7d2b4c90501fdf4f0a4f15-4914317-images-thumbs&n=13",
+            "categoryId": "2",
+            "inStock": true,
+            "createdAt": "2024-01-12T11:30:00.000Z"
+          },
+          "quantity": 1,
+          "price": 12000,
+          "totalPrice": 12000,
+          "addedAt": "2025-12-07T07:03:56.142Z"
+        }
+      ],
+      "totalPrice": 18500,
+      "totalQuantity": 2,
+      "cartId": "a28b",
+      "userId": "12345",
+      "id": "a28b"
+    },
+    {
+      "items": [
+        {
+          "productId": "2",
+          "product": {
+            "id": "2",
+            "title": "Золотой кулон",
+            "description": "Стильный золотой кулон с цепочкой",
+            "price": 12000,
+            "imageUrl": "https://avatars.mds.yandex.net/i?id=506c9962a2abe6d44d7d2b4c90501fdf4f0a4f15-4914317-images-thumbs&n=13",
+            "categoryId": "2",
+            "inStock": true,
+            "createdAt": "2024-01-12T11:30:00.000Z"
+          },
+          "quantity": 1,
+          "price": 12000,
+          "totalPrice": 12000,
+          "addedAt": "2025-12-07T10:08:35.971Z"
+        }
+      ],
+      "totalPrice": 12000,
+      "totalQuantity": 1,
+      "cartId": "7550",
+      "userId": "5319",
+      "id": "7550"
+    }
+  ]
+}

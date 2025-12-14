@@ -1,0 +1,162 @@
+@font-face {
+  font-family: 'FoglihtenNo06';
+  src: url('fonts/FoglihtenNo06.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-primary: 'FoglihtenNo06', sans-serif;
+
+  /* colors */
+  --color-primary: #800080;
+  --color-emerald: #228b22b3;
+  --color-light-grey: #bbbbbb;
+  --color-text: #333;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-background: #f0ffff;
+
+  /* additional colors */
+  --color-gold: #d4af37;
+  --color-silver: #c0c0c0;
+  --color-platinum: #e5e4e2;
+  --color-diamond: #f0f8ff;
+
+  /* width*/
+  --width-desktop: 1200px;
+  --width-laptop: 768px;
+  --width-tablet: 480px;
+  --width-mobile: 320px;
+
+  /* spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-white);
+  letter-spacing: 0.2rem;
+  line-height: 1.5;
+  overflow-x: hidden;
+  /* Предотвращает горизонтальный скролл */
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.container {
+  max-width: var(--width-desktop);
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+/* Адаптивная типография */
+@media (max-width: 768px) {
+  body {
+    letter-spacing: 0.15rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    letter-spacing: 0.1rem;
+    line-height: 1.3;
+  }
+}
+
+/* Утилитарные классы для адаптивности */
+.mobile-hidden {
+  display: block;
+}
+
+.tablet-hidden {
+  display: block;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tablet-hidden {
+    display: none !important;
+  }
+}
+
+/* Улучшения для touch устройств */
+@media (hover: none) and (pointer: coarse) {
+
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    /* Минимальный размер для touch */
+    min-width: 44px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    /* Предотвращает масштабирование в iOS */
+  }
+}
+
+/* Предотвращает сдвиг контента при появлении скроллбара */
+html {
+  margin-left: calc(100vw - 100%);
+}
+
+/* Улучшения для высоких экранов */
+@media (min-height: 1000px) {
+  body {
+    font-size: 1.1rem;
+  }
+}
+
+/* Темная тема (опционально) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #f0f0f0;
+    --color-background: #1a1a1a;
+  }
+}
+
+/* Уменьшает анимации для пользователей, которые их предпочитают избегать */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
