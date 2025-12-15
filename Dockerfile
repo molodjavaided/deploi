@@ -1,51 +1,18 @@
-# FROM node:20
-
-# WORKDIR /app
-
-# COPY . .
-
-# WORKDIR /app/client
-# RUN npm install
-# RUN npm run build
-
-# WORKDIR /app/server
-# RUN npm install
-
-# EXPOSE 3000
-
-# CMD [ "node", "app.js" ]
-
-FROM node:20-alpine
-
-# 1. Устанавливаем рабочую директорию
+# Билд клиента
+FROM node:20 AS builder
 WORKDIR /app
+COPY ./client ./client
+RUN cd client && npm ci && npm run build
 
-# 2. Копируем package.json для кэширования
-COPY client/package*.json ./client/
-COPY server/package*.json ./server/
-
-# 3. Устанавливаем зависимости клиента
-WORKDIR /app/client
-RUN npm install
-
-# 4. Копируем ВЕСЬ исходный код клиента (включая index.html!)
-COPY client/ ./
-
-# 5. Собираем клиент
-RUN npm run build
-
-# 6. Устанавливаем зависимости сервера
+# Билд сервера
+FROM node:20
 WORKDIR /app/server
-RUN npm install
+COPY ./server/package*.json ./
+RUN npm ci --omit=dev
+COPY ./server ./
+COPY --from=builder /app/client/dist ./dist
 
-# 7. Копируем исходный код сервера
-COPY server/ ./
 
-# 8. Копируем собранный клиент в папку для статики
-RUN mkdir -p /app/server/public && \
-    cp -r /app/client/dist/* /app/server/public/
+EXPOSE 3005
 
-# 9. Запускаем сервер
-WORKDIR /app/server
-EXPOSE 3000
-CMD ["node", "app.js"]
+CMD [ "node", "app.js" ]

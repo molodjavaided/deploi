@@ -15,8 +15,11 @@
 //   return await data_1;
 // }
 // utils/request.js
+
+const API_URL = import.meta.env.VITE_API_URL
+
 export function request(path, method, data) {
-  return fetch('http://localhost:3000/api' + path, {
+  return fetch(`${API_URL}` + path, {
     headers: {
       'Content-Type': 'application/json',
     },
