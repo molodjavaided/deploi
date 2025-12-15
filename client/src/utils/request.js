@@ -1,25 +1,10 @@
-// export async function request(path, method, data) {
-
-//   const res = await fetch('http://localhost:3000/api' + path, {
-//     headers: {
-//       'content-type': 'application/json',
-//     },
-//     credentials: 'include',
-//     method: method || 'GET',
-//     body: data ? JSON.stringify(data) : undefined,
-//   });
-//   const data_1 = await res.json();
-//   if (!res.ok) {
-//     throw new Error(data_1.message || 'Ошибка сервера');
-//   }
-//   return await data_1;
-// }
-// utils/request.js
-
-const API_URL = import.meta.env.VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL || 'http://5.129.215.5'
 
 export function request(path, method, data) {
-  return fetch(`${API_URL}` + path, {
+   const apiPath = path.startsWith('/api') ? path : `/api${path.startsWith('/') ? path : `/${path}`}`
+  console.log('API_URL:', API_URL)
+
+  return fetch(`${API_URL}${apiPath}`, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -27,20 +12,26 @@ export function request(path, method, data) {
     method: method || 'GET',
     body: data ? JSON.stringify(data) : undefined,
   }).then(async (res) => {
-    const contentType = res.headers.get('content-type');
+    const contentType = res.headers.get('content-type')
+    const text = await res.text()
 
-    // Проверяем, что ответ - JSON
+    console.log('Response status:', res.status)
+    console.log('Content-Type:', contentType)
+    console.log('Response preview:', text.substring(0, 200))
+
     if (!contentType || !contentType.includes('application/json')) {
-      const text = await res.text();
-      throw new Error(`Ожидался JSON, но получили: ${text.slice(0, 100)}...`);
+      throw new Error(`Ожидался JSON, но получили: ${text.slice(0, 100)}...`)
     }
 
-    const responseData = await res.json();
+    const responseData = JSON.parse(text)
 
     if (!res.ok) {
-      throw new Error(responseData.message || 'Ошибка сервера');
+      throw new Error(responseData.message || 'Ошибка сервера')
     }
 
-    return responseData;
-  });
+    return responseData
+  }).catch(error => {
+    console.error('Request error:', error.message)
+    throw error
+  })
 }

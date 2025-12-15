@@ -21,17 +21,16 @@ const app = express();
 const PORT = process.env.PORT
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: process.env.CLIENT_URL || 'http://localhost:5173',
     credentials: true
 }))
 
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(express.static(join(__dirname, 'dist')))
-
-app.get(/^(?!\/api).*/, (req, res) => {
-    res.sendFile(join(__dirname, 'dist', 'index.html'))
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`)
+    next()
 })
 
 app.use('/api/product', productRouter)
@@ -39,18 +38,27 @@ app.use('/api/auth', authRouter)
 app.use('/api/category', categoryRouter)
 app.use('/api/cart', cartRouter)
 
+app.get('/api/test', (req, res) => {
+    console.log('Test endpoint called')
+    res.json({ status: 'ok', message: 'API works' })
+})
 
+app.use(express.static(join(__dirname, 'dist')))
+
+app.get(/^(?!\/api).*/, (req, res) => {
+    res.sendFile(join(__dirname, 'dist', 'index.html'))
+})
 
 const start = async () => {
     try {
-        const mongoUser = process.env.MONGO_USER;
-        const mongoPassword = process.env.MONGO_PASSWORD;
-        const mongoDb = process.env.MONGO_DB;
-        const mongoHost = process.env.MONGO_HOST;
+        // const mongoUser = process.env.MONGO_USER;
+        // const mongoPassword = process.env.MONGO_PASSWORD;
+        // const mongoDb = process.env.MONGO_DB;
+        // const mongoHost = process.env.MONGO_HOST;
 
-        const mongoUri = `mongodb://user:mongopass@${mongoHost}:27017/${mongoDb}?authSource=admin`
+        // const mongoUri = `mongodb://user:mongopass@${mongoHost}:27017/${mongoDb}?authSource=admin`
 
-        await mongoose.connect(mongoUri);
+        await mongoose.connect(process.env.MONGO_URI);
         console.log('connect MongoDB');
 
         app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`));

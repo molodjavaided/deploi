@@ -22,7 +22,7 @@ authRouter.post('/register', async (req,res) => {
             password: hashedPassword,
         })
 
-        const token = await jwt.sign({ userId: user.user._id }, process.env.JWT_SECRET);
+        const token = await jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
         res.cookie('token', token, { httpOnly: true })
 
